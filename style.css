@@ -1,13 +1,29 @@
+body {
+  text-align: center; /* Center inline and inline-block content */
+}
+
+#container {
+  /* To center a block-level element with text-align, you might need to set its display to inline-block and then center it, */
+  /* or you can rely on the body's text-align if the container's width is less than the body's */
+  margin: 0 auto; /* Centers block-level elements horizontally */
+  display: inline-block; /* If you want it to shrink to its content width */
+  text-align: left; /* Reset text alignment within the container if needed */
+}
+
 .gridRow {
   display: flex;
   flex-direction: row;
 }
+
 .cell {
   border: 1px solid black;
-  width: 20px; /* adjust as needed */
-  height: 20px; /* adjust as needed */
+  width: 20px;
+  height: 20px;
 }
-#container {
-  display: flex;
-  flex-direction: column;
+
+#reset {
+  display: inline-block; /* Allows it to be centered by text-align */
+  /* Add any specific styling for your reset button here */
+  padding: 10px 20px;
+  font-size: 16px;
 }

@@ -8,6 +8,7 @@ function defaultGrid() {
   makeRows(16);
   makeColumns(16);
   addCellEventListeners();
+  resetGrid();
 }
 
 // Takes (rows, columns) input and makes a grid
@@ -45,3 +46,14 @@ function addCellEventListeners() {
 }
 
 defaultGrid(); // Call defaultGrid to create the grid on page load
+
+// Resets the grid to default
+function resetGrid() {
+  btn = document.getElementById("reset");
+  btn.addEventListener("click", function () {
+   
+    [...cells].forEach(cell => {
+      cell.style.backgroundColor = "white"; // Reset color to white
+    });
+    });
+  }
