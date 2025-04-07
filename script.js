@@ -7,6 +7,7 @@ let cells = document.getElementsByClassName("cell");
 function defaultGrid() {
   makeRows(16);
   makeColumns(16);
+  addCellEventListeners();
 }
 
 // Takes (rows, columns) input and makes a grid
@@ -30,6 +31,17 @@ function makeColumns(cellNum) {
       rows[i].appendChild(newCell);
     }
   }
+}
+
+
+// Adds event listeners to each cell using spread syntax and forEach
+function addCellEventListeners() {
+  cells = document.getElementsByClassName("cell"); // Get the latest set of cells
+  [...cells].forEach(cell => {
+    cell.addEventListener("mouseover", function (e) {
+      e.target.style.backgroundColor = "black"; // Change color on hover
+    });
+  });
 }
 
 defaultGrid(); // Call defaultGrid to create the grid on page load
